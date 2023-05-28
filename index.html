@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Convertor</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Palindrome checker</h2>
+        <div class="inputdiv">
+            <input id="input" type="text" placeholder="Input string">
+        </div>
+        <div class="button"onclick="convert()">
+            <button type="submit">CHECK</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        function convert()
+        {
+            var str=(document.getElementById("input").value)
+            let n=str.length
+            let t;
+            let m=0;
+            if(n%2==0)
+            {
+                for(let i=0;i<n/2;i++)
+                {
+                    if(str[i]==str[n-1-i])
+                    {
+                        m++
+                    }
+                }
+            }
+            let result=document.getElementById("result");
+            if(m==(n/2))
+            {
+                result.innerHTML="Palindrome"
+            }
+            else{
+                result.innerHTML="Not a Palindrome"
+            }
+        }
+    </script>
+</body>
+</html>
